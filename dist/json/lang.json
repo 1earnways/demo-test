@@ -1,0 +1,13 @@
+{
+    "langs":{
+        "sv":["bb5f1cbf-2e90-4dd0-8f38-0ff11cac7a64", "Svenska", 1],
+        "en":["xxx", "English", 0]
+    },
+    "default":"sv",
+    "readonly":true,
+    "useDB":false,
+    "saveToSession":true,
+    "offline":false,
+    "url":"https://test.txtr.learnways.com/",
+    "prefix":""
+}

@@ -1,0 +1,140 @@
+/*Colors*/
+$purpleL:#BE3DFF;
+$purpleD:#9D11EF;
+$blueL:#007DFA;
+$blueD:#0272CE;
+$redL:#F72233;
+$redD:#D1263A;
+$yellowL:#FF9C1A;
+$yellowD:#A85F00;
+$greenL:#00B837;
+$greenD:#247F3F;
+$greenD2:#006D50;
+$greyD:#5E5E5E;
+$greyL:#FCF7EE;
+$light:#FDEAD1;
+$dark:#161616; 
+$beige:#FCEED7;
+$grey:#EFEFEF;
+
+$text-color:#161616;
+
+$navH:63px; 
+
+/*Variables*/
+
+/*Font sizes*/
+$xl: 5em; //80px
+$h1: 3.125em; //50px
+$h2: 2.25em;//36px
+$h2_mob:1.75em;
+$h3: 1.5em;//24px
+$h4: 1.375em;//22px
+
+$p:1.375em;//22px
+$p_M:1.25em;//20px
+$p_S:1.0625em;//17px
+$p_XS:13px;
+
+$btn:1.125em;//18px
+
+/*Mixins*/
+@mixin minH {
+  min-height:calc(100vh - 150px);
+  min-height:calc((var(--vh, 1vh) * 100) - 150px); 
+}
+@mixin fullMinH {
+  min-height:calc(100vh);
+  min-height:calc((var(--vh, 1vh) * 100)); 
+}
+
+
+@mixin hfont(){
+  font-family: 'Montserrat', sans-serif;
+  font-weight:500;
+}
+@mixin hfont-bold(){
+  font-family: 'Montserrat', sans-serif;
+  font-weight:700;
+}
+@mixin hfont-light(){
+  font-family: 'Montserrat', sans-serif;
+  font-weight:300;
+}
+@mixin pfont(){
+  font-family: 'Merriweather', serif;
+  font-weight:400;
+}
+@mixin pfont-italic(){
+  font-family: 'Merriweather', serif;
+  font-weight:400;
+  font-style: italic;
+}
+@mixin pfont-bold(){
+  font-family: 'Merriweather', serif;
+  font-weight:700;
+}
+@mixin pfont-bold-italic(){
+  font-family: 'Merriweather', serif;
+  font-weight:700;
+  font-style: italic;
+}
+
+@mixin bp($point) {
+  @if $point == xlargeMin {
+    @media (min-width: 1600px) { @content; }
+  }
+  @if $point == largeMin {
+    @media (min-width: 1250px) { @content; }
+  }
+  @if $point == mediumLMin {
+    @media (min-width: 992px) { @content; }
+  }
+  @if $point == mediumMin {
+    @media (min-width: 768px) and (min-height: 480px) { @content; }
+  }
+  @if $point == mediumMax {
+    @media (max-width: 767px) { @content; }
+  }
+  @if $point == smallMin {
+    @media (min-width: 480px)  { @content; }
+  }	
+  @if $point == smallMax {
+    @media (max-width: 479px)  { @content; }
+  }
+  @if $point == xSmallMin {
+    @media (min-width: 375px)  { @content; }
+  }	
+
+  @if $point == mobLandscape {
+    @media only screen 
+      and (min-device-width: 375px) 
+      and (max-device-width: 812px) 
+      and (orientation: landscape) { 
+        @content;
+    } 
+  }	
+
+
+}
+
+
+
+// Tint - Lighten a color
+@function tint($color, $percentage)
+{
+  @return mix(#fff, $color, $percentage);
+}
+
+
+//HOVER
+@mixin hover() {
+  &:hover { @content; }
+}
+
+@mixin hover-focus() {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
